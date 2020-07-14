@@ -1,10 +1,17 @@
 import React from 'react';
 import Home from './components/home'
 
-const getFirstName = (name) => name.split(' ')[0]
+const multiplier = {
+  numbers: [2, 4, 6],
+  multiplyBy: 2,
+  multiply () {
+    return this.numbers.map((number) => number * this.multiplyBy)
+ }
+}
+
+console.log(multiplier.multiply())
 
 
-console.log(getFirstName("Alex Lewis"))
 
 function App() {
   return (
