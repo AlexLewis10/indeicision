@@ -1,22 +1,35 @@
 import React from 'react';
 import Home from './components/home'
 
-const multiplier = {
-  numbers: [2, 4, 6],
-  multiplyBy: 2,
-  multiply () {
-    return this.numbers.map((number) => number * this.multiplyBy)
- }
+let count = 0
+const addOne = () => {
+  // count += 1
+  console.log('+ 1')
 }
 
-console.log(multiplier.multiply())
+const minusOne = () => {
+  console.log('-1')
+}
 
+const reset = () => {
+  console.log('reset')
+}
+
+const template = (
+  <div>
+    <h1>Count: {count}</h1>
+    <button onClick={addOne}>+1</button>
+    <button onClick={minusOne}>-1</button>
+    <button onClick={reset}>Reset</button>
+  </div>
+)
 
 
 function App() {
   return (
     <div>
       <Home />
+      {template}
     </div>
   );
 }
