@@ -20,6 +20,10 @@ class Student extends Person {
   hasMajor() {
     return !!this.major
   }
+
+  getDescription() {
+    let description = super.getDescription()
+  }
 }
 
 const me = new Student('Alex Lewis', 0, 'Geography')
