@@ -16,6 +16,14 @@ export class Home extends Component {
 
     const onFormSubmit = (e) => {
       e.preventDefault()
+
+      const option = e.target.elements.option.value
+
+      if (option) {
+        app.options.push(option)
+        e.target.elements.option.value = ''
+      }
+
     }
 
     return (
@@ -24,6 +32,7 @@ export class Home extends Component {
         <h1>{app.title}</h1>
         {(app.subtitle && <p>Subtitle: {app.subtitle}</p>)}
         <p>{renderOptions()}</p>
+        <p>{app.options.length}</p>
         <ol>
           <li>Item one</li>
           <li>Item two</li>
