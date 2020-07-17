@@ -1,49 +1,21 @@
 import React, { Component } from 'react'
+import Action from './action'
+import Options from './options'
+import AddOption from './addOption'
 
-export class Home extends Component {
-  
+export class Header extends Component {
   render() {
-
-    const app = { 
-      title: 'Indecision App',
-      subtitle: 'Put your life in the hands of a computer',
-      options: ['One', 'Two']
-    }
-
-    function renderOptions () {
-      return app.options.length > 0 ? 'Here are your options' : 'No options'
-    };
-
-    const onFormSubmit = (e) => {
-      e.preventDefault()
-
-      const option = e.target.elements.option.value
-
-      if (option) {
-        app.options.push(option)
-        e.target.elements.option.value = ''
-      }
-
-    }
-
     return (
-
       <div>
-        <h1>{app.title}</h1>
-        {(app.subtitle && <p>Subtitle: {app.subtitle}</p>)}
-        <p>{renderOptions()}</p>
-        <p>{app.options.length}</p>
-        <ol>
-          <li>Item one</li>
-          <li>Item two</li>
-        </ol>
-        <form onSubmit={onFormSubmit}>
-          <input type="text" name="option"/>
-          <button>Submit</button>
-        </form>
+        <h1>Indecision</h1>
+        <h2>Put your life in the hands of a computer</h2>
+        <Action />
+        <Options />
+        <AddOption />
       </div>
     )
   }
 }
 
-export default Home
+export default Header
+
