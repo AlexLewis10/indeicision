@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
+import Header from './header'
 import Action from './action'
 import Options from './options'
 import AddOption from './addOption'
 
-export class Header extends Component {
+export class Home extends Component {
   render() {
     return (
-      <div>
-        <h1>Indecision</h1>
-        <h2>Put your life in the hands of a computer</h2>
+      <div>        
+        <Header />
         <Action />
         <Options />
         <AddOption />
@@ -17,5 +17,5 @@ export class Header extends Component {
   }
 }
 
-export default Header
+export default Home
 

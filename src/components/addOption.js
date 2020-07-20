@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class addOption extends Component {
+export class AddOption extends Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ export class addOption extends Component {
   }
 }
 
-export default addOption
+export default AddOption
