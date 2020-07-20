@@ -6,9 +6,10 @@ import AddOption from './addOption'
 
 export class Home extends Component {
   render() {
+    const title = 'Indecision'
     return (
       <div>        
-        <Header />
+        <Header title={title} />
         <Action />
         <Options />
         <AddOption />
