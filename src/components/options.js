@@ -3,6 +3,11 @@ import Option from './option'
 
 
 export class Options extends Component {
+constructor(props) {
+  super(props)
+  this.handleRemoveAll = this.handleRemoveAll.bind(this)
+}
+
   handleRemoveAll () {
     alert('Remove All')
   }
