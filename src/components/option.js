@@ -4,7 +4,7 @@ export class Option extends Component {
   render() {
     return (
       <div> 
-        <p>Option Component</p>
+        {this.props.optionText}
       </div>
     )
   }

@@ -14,9 +14,8 @@ export class Options extends Component {
       <div>
         <p>You have {this.props.options.length} Options</p>
         <div>
-        {this.props.options.map((option) => <p key={option}>{option}</p>)}
+        {this.props.options.map((option) => <Option key={option} optionText={option} />)}
         </div>
-        <Option />
       </div>
     )
   }
