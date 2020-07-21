@@ -4,9 +4,9 @@ export class AddOption extends Component {
 
   handleAddOption (e) {
     e.preventDefault()
-    const option = e.target.elements.addOption.value
+    const option = e.target.elements.addOption.value.trim()
     if (option) {
-      alert('Add Option')
+      alert(option)
     }
   }
   render() {
