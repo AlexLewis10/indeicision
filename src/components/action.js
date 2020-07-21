@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 
 export class Action extends Component {
+
+  handlePick() {
+    
+  }
+
   render() {
     return (
       <div>
-        <button>What should I do?</button>
+        <button onClick={this.handlePick}>What should I do?</button>
       </div>
     )
   }
