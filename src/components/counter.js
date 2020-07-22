@@ -12,11 +12,19 @@ export class Counter extends Component {
   }
 
   handleAddOne() {
-    this.setState({ count: this.state.count += 1})
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 1
+      }
+    })
   }
 
   handleMinusOne() {
-    this.setState({ count: this.state.count -= 1})
+    this.setState((prevState) => {
+      return {
+        count: prevState.count -1
+      }
+    })
   }
 
   handleReset() {
