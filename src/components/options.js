@@ -9,7 +9,7 @@ constructor(props) {
 }
 
   handleRemoveAll () {
-    alert('Remove All')
+    console.log(this.props.options) 
   }
 
   render() {
