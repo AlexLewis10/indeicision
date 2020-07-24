@@ -22,7 +22,7 @@ export class Counter extends Component {
   handleMinusOne() {
     this.setState((prevState) => {
       return {
-        count: prevState.count -1
+        count: prevState.count - 1
       }
     })
   }

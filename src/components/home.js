@@ -4,6 +4,7 @@ import Action from './action'
 import Options from './options'
 import AddOption from './addOption'
 import Counter from './counter'
+import Visibility from '../Fun/visibility'
 
 export class Home extends Component {
   render() {
@@ -17,6 +18,7 @@ export class Home extends Component {
         <Options options={options}/>
         <AddOption />
         <Counter />
+        <Visibility />
       </div>
     )
   }
