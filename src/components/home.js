@@ -9,13 +9,20 @@ export class Home extends Component {
   constructor(props) {
     super(props)
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
+    this.handlePick = this.handlePick.bind(this)
       this.state = {
-        options: ['thing one', 'thing two', 'thing three']
+        options: ['thing one', 'thing two', 'thing three'],
       }
     }
 
     handleDeleteOptions() {
       this.setState({ options: [] })
+    }
+
+    handlePick() {
+      const randomNum = Math.floor(Math.random() * this.state.options.length)
+      const option = this.state.options[randomNum]
+      alert(option)
     }
 
     render() {
@@ -24,7 +31,11 @@ export class Home extends Component {
       return (
         <div>        
           <Header title={title} subtitle={subtitle} />
-          <Action hasOptions={this.state.options.length > 0}/>
+          <Action 
+            hasOptions={this.state.options.length > 0}
+            handlePick={this.handlePick}
+            selectedOption={this.state.selectedOption}
+          />
           <Options 
             options={this.state.options}
             handleDeleteOptions={this.handleDeleteOptions}
