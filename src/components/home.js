@@ -8,9 +8,14 @@ import Counter from './counter'
 export class Home extends Component {
   constructor(props) {
     super(props)
+    this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
       this.state = {
         options: ['thing one', 'thing two', 'thing three']
       }
+    }
+
+    handleDeleteOptions() {
+      this.setState({ options: [] })
     }
 
     render() {
@@ -20,7 +25,10 @@ export class Home extends Component {
         <div>        
           <Header title={title} subtitle={subtitle} />
           <Action hasOptions={this.state.options.length > 0}/>
-          <Options options={this.state.options}/>
+          <Options 
+            options={this.state.options}
+            handleDeleteOptions={this.handleDeleteOptions}
+          /> 
           <AddOption />
           <Counter />
         </div>
