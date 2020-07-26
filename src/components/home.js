@@ -10,6 +10,7 @@ export class Home extends Component {
     super(props)
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
     this.handlePick = this.handlePick.bind(this)
+    this.handleAddOption = this.handleAddOption.bind(this)
       this.state = {
         options: ['thing one', 'thing two', 'thing three'],
       }
@@ -23,6 +24,14 @@ export class Home extends Component {
       const randomNum = Math.floor(Math.random() * this.state.options.length)
       const option = this.state.options[randomNum]
       alert(option)
+    }
+
+    handleAddOption(option) {
+      this.setState((prevState) => {
+        return {
+          options:  prevState.options.concat([option])
+        }
+      })
     }
 
     render() {
@@ -39,7 +48,9 @@ export class Home extends Component {
             options={this.state.options}
             handleDeleteOptions={this.handleDeleteOptions}
           /> 
-          <AddOption />
+          <AddOption 
+            handleAddOption={this.handleAddOption}
+          />
           <Counter />
         </div>
       )
