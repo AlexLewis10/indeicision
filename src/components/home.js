@@ -12,7 +12,7 @@ export class Home extends Component {
     this.handlePick = this.handlePick.bind(this)
     this.handleAddOption = this.handleAddOption.bind(this)
       this.state = {
-        options: [],
+        options: props.options
       }
     }
 
@@ -32,7 +32,7 @@ export class Home extends Component {
       } else if (this.state.options.indexOf(option) > -1){
         return 'This option already exists'
       }
-      
+
       this.setState((prevState) => {
         return {
           options:  prevState.options.concat([option])
@@ -57,12 +57,15 @@ export class Home extends Component {
           <AddOption 
             handleAddOption={this.handleAddOption}
           />
-          <Counter />
+          <Counter count={1}/>
         </div>
       )
     }
   }
 
+Home.defaultProps = {
+  options: []
+}
 
 
 
