@@ -14,9 +14,7 @@ export class AddOption extends Component {
     const option = e.target.elements.addOption.value.trim()
     const error = this.props.handleAddOption(option)
 
-    this.setState(() => {
-      return { error: error }
-    })
+    this.setState({ error: error })
   }
   render() {
     return (

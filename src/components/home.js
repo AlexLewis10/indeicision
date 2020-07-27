@@ -32,12 +32,7 @@ export class Home extends Component {
       } else if (this.state.options.indexOf(option) > -1){
         return 'This option already exists'
       }
-
-      this.setState((prevState) => {
-        return {
-          options:  prevState.options.concat([option])
-        }
-      })
+      this.setState((prevState) => ({ options:  prevState.options.concat([option])}))
     }
 
     render() {
@@ -57,7 +52,7 @@ export class Home extends Component {
           <AddOption 
             handleAddOption={this.handleAddOption}
           />
-          <Counter count={1}/>
+          <Counter count={0}/>
         </div>
       )
     }
