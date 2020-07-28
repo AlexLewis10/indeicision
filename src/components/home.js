@@ -18,6 +18,10 @@ export class Home extends Component {
     }
 
     componentDidMount() {
+      const json = localStorage.getItem('options')
+      const options = JSON.parse(json)
+
+      this.setState({ options: options })
       console.log('Component Did Mount')
     }
 
