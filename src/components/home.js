@@ -26,7 +26,7 @@ export class Home extends Component {
           this.setState({ options: options })
         }
       } catch (e) {
-        // Do nothing at all
+        // Do nothing
       }
 
     }

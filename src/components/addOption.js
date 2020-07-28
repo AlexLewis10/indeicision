@@ -9,12 +9,16 @@ export class AddOption extends Component {
     }
   }
 
-  handleAddOption (e) {
+  handleAddOption(e) {
     e.preventDefault()
     const option = e.target.elements.addOption.value.trim()
     const error = this.props.handleAddOption(option)
 
     this.setState({ error: error })
+
+    if (!error) {
+      e.target.elements.addOption.value = ''
+    }
   }
   render() {
     return (
