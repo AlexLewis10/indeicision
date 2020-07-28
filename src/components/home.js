@@ -18,12 +18,17 @@ export class Home extends Component {
     }
 
     componentDidMount() {
-      const json = localStorage.getItem('options')
-      const options = JSON.parse(json)
-
-      if (options) {
-        this.setState({ options: options })
+      try {
+        const json = localStorage.getItem('options')
+        const options = JSON.parse(json)
+  
+        if (options) {
+          this.setState({ options: options })
+        }
+      } catch (e) {
+        // Do nothing at all
       }
+
     }
 
     componentDidUpdate(prevProps, prevState) {
