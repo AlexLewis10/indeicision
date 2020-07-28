@@ -21,15 +21,15 @@ export class Home extends Component {
       const json = localStorage.getItem('options')
       const options = JSON.parse(json)
 
-      this.setState({ options: options })
-      console.log('Component Did Mount')
+      if (options) {
+        this.setState({ options: options })
+      }
     }
 
     componentDidUpdate(prevProps, prevState) {
       if (prevState.options.length !== this.state.options.length) {
         const json = JSON.stringify(this.state.options)
         localStorage.setItem('options', json)
-        console.log('Component did update')
       }
       
     }
