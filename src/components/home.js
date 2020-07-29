@@ -13,7 +13,7 @@ export class Home extends Component {
     this.handleAddOption = this.handleAddOption.bind(this)
     this.handleDeleteOption = this.handleDeleteOption.bind(this)
       this.state = {
-        options: props.options
+        options: []
       }
     }
 
@@ -91,11 +91,6 @@ export class Home extends Component {
       )
     }
   }
-
-Home.defaultProps = {
-  options: []
-}
-
 
 
 
