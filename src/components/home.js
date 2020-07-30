@@ -34,6 +34,7 @@ export class Home extends Component {
     componentDidUpdate(prevProps, prevState) {
       if (prevState.options.length !== this.state.options.length) {
         const json = JSON.stringify(this.state.options)
+
         localStorage.setItem('options', json)
       }
       
