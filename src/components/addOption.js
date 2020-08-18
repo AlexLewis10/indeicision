@@ -4,12 +4,8 @@ export class AddOption extends Component {
   state = {
     error: undefined
   }
-  constructor(props) {
-    super(props) 
-    this.handleAddOption = this.handleAddOption.bind(this)
-  }
 
-  handleAddOption(e) {
+  handleAddOption = (e) => {
     e.preventDefault()
     const option = e.target.elements.addOption.value.trim()
     const error = this.props.handleAddOption(option)
